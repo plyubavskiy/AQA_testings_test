@@ -1,0 +1,33 @@
+# Виртуальное окружение
+.venv/
+venv/
+env/
+
+# Кеш Python
+__pycache__/
+*.pyc
+*.pyo
+
+# Кеш pytest
+.pytest_cache/
+
+# Файлы IDE
+.idea/
+*.iml
+
+# Логи и временные файлы
+*.log
+*.tmp
+
+# Секреты
+.env
+*.pem
+*.key
+
+# Файлы драйверов (если лежат в проекте)
+chromedriver.exe
+chromedriver_*.exe
+
+# OS
+.DS_Store
+Thumbs.db
