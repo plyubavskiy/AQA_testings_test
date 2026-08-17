@@ -3,10 +3,8 @@ from pages.login_page import LoginPage
 
 
 class TestSaucedemoLogin:
-    """Тесты для страницы логина Saucedemo"""
 
     def test_valid_login(self, browser):
-        """Тест: успешный логин с правильными данными"""
         login_page = LoginPage(browser)
         login_page.open()
         login_page.login("standard_user", "secret_sauce")
@@ -16,10 +14,7 @@ class TestSaucedemoLogin:
         title = login_page.get_products_title()
         assert "Products" in title, f"Ожидался заголовок 'Products', а получили '{title}'"
 
-        print("✅ Тест успешного логина пройден!")
-
     def test_invalid_login(self, browser):
-        """Тест: логин с неверными данными"""
         login_page = LoginPage(browser)
         login_page.open()
         login_page.login("wrong_user", "wrong_password")
@@ -30,10 +25,7 @@ class TestSaucedemoLogin:
         assert expected_error in error_text, \
             f"Ожидалась ошибка '{expected_error}', а получили '{error_text}'"
 
-        print("✅ Тест неверного логина пройден!")
-
     def test_empty_login(self, browser):
-        """Тест: логин с пустыми полями"""
         login_page = LoginPage(browser)
         login_page.open()
         login_page.click_login_button()
@@ -44,10 +36,7 @@ class TestSaucedemoLogin:
         assert expected_error in error_text, \
             f"Ожидалась ошибка '{expected_error}', а получили '{error_text}'"
 
-        print("✅ Тест пустого логина пройден!")
-
     def test_locked_user(self, browser):
-        """Тест: заблокированный пользователь"""
         login_page = LoginPage(browser)
         login_page.open()
         login_page.login("locked_out_user", "secret_sauce")
@@ -57,5 +46,3 @@ class TestSaucedemoLogin:
 
         assert expected_error in error_text, \
             f"Ожидалась ошибка '{expected_error}', а получили '{error_text}'"
-
-        print("✅ Тест заблокированного пользователя пройден!")
