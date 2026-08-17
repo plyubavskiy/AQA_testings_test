@@ -5,16 +5,15 @@
 ---
 
 ## 📁 Структура проекта
-project/
-├── pages/
-│ ├── base_page.py # Базовый класс для всех страниц
-│ └── login_page.py # Класс страницы логина (Saucedemo)
-├── tests/
-│ ├── test_google.py # Тесты для Google
-│ └── test_saucedemo.py # Тесты для Saucedemo
-├── conftest.py # Фикстуры pytest (browser, driver)
-├── pytest.ini # Настройки pytest
-└── README.md # Документация проекта
+| Путь | Описание |
+|------|----------|
+| `pages/base_page.py` | Базовый класс для всех страниц |
+| `pages/login_page.py` | Класс страницы логина (Saucedemo) |
+| `tests/test_google.py` | Тесты для Google |
+| `tests/test_saucedemo.py` | Тесты для Saucedemo |
+| `conftest.py` | Фикстуры pytest (browser, driver) |
+| `pytest.ini` | Настройки pytest |
+| `README.md` | Документация проекта |
 
 ---
 
