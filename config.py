@@ -1,2 +1,7 @@
 URL_GOOGLE="https://www.google.com"
 URL_SAUCE="https://www.saucedemo.com"
+saucedemo_login_valid="standard_user"
+saucedemo_login_invalid="wrong_user"
+saucedemo_password_valid="secret_sauce"
+saucedemo_password_invalid="wrong_password"
+saucedemo_login_locked="locked_out_user"

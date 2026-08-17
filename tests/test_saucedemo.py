@@ -1,13 +1,13 @@
 import pytest
 from pages.login_page import LoginPage
-
+import config
 
 class TestSaucedemoLogin:
 
     def test_valid_login(self, browser):
         login_page = LoginPage(browser)
         login_page.open()
-        login_page.login("standard_user", "secret_sauce")
+        login_page.login(config.saucedemo_login_valid, config.saucedemo_password_valid)
 
         assert login_page.is_login_successful(), "Логин не удался: логотип не появился"
 
@@ -17,7 +17,7 @@ class TestSaucedemoLogin:
     def test_invalid_login(self, browser):
         login_page = LoginPage(browser)
         login_page.open()
-        login_page.login("wrong_user", "wrong_password")
+        login_page.login(config.saucedemo_login_invalid, config.saucedemo_password_invalid)
 
         error_text = login_page.get_error_message()
         expected_error = "Username and password do not match"
@@ -39,7 +39,7 @@ class TestSaucedemoLogin:
     def test_locked_user(self, browser):
         login_page = LoginPage(browser)
         login_page.open()
-        login_page.login("locked_out_user", "secret_sauce")
+        login_page.login(config.saucedemo_login_locked, config.saucedemo_password_valid)
 
         error_text = login_page.get_error_message()
         expected_error = "Sorry, this user has been locked out"
