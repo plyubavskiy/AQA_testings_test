@@ -9,6 +9,10 @@ from webdriver_manager.chrome import ChromeDriverManager
 def browser():
     chrome_options = Options()
 
+    chrome_options.add_argument("--ignore-certificate-errors")
+    chrome_options.add_argument("--ignore-ssl-errors")
+    chrome_options.add_argument("--allow-insecure-localhost")
+
     chrome_options.add_argument("--disable-notifications")
     chrome_options.add_experimental_option("excludeSwitches", ["enable-automation"])
     chrome_options.add_experimental_option('useAutomationExtension', False)

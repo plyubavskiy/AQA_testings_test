@@ -1,5 +1,6 @@
 from selenium.webdriver.common.by import By
 from pages.base_page import BasePage
+import config
 
 
 class LoginPage(BasePage):
@@ -11,7 +12,7 @@ class LoginPage(BasePage):
     PRODUCTS_HEADER = (By.CLASS_NAME, "app_logo")
     PRODUCTS_TITLE = (By.CLASS_NAME, "title")
 
-    URL = "https://www.saucedemo.com/"
+    URL = config.URL_SAUCE
 
     def open(self):
         self.driver.get(self.URL)
